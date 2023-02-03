@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Areas</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+        * {
+            font-family: "Oswald", sans-serif;
+        }
+
+        .container {
+            background-color: #e2e2e2;
+            padding: 10px;
+            display: grid;
+            height: 100vw;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 10px;
+
+            grid-template-areas:
+                "header header header header"
+                "sidebar content content content"
+                "footer footer footer footer";
+        }
+
+        .item {
+            background-color: tomato;
+            padding: 5px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+        }
+
+        .item-1 {
+            grid-area: header;
+            background-image: url('https://www.denofgeek.com/wp-content/uploads/2022/01/pjimage-31.jpg?resize=768%2C432');
+            background-size: cover;
+        }
+
+        .item-2 {
+            grid-area: content;
+            background-image: url('https://cdn.mos.cms.futurecdn.net/283d2b36f19d2e2e0fd3cf1b435844f1-970-80.jpg.webp');
+            background-size:cover;
+        }
+
+        .item-3 {
+            grid-area: sidebar;
+            background-image: url("https://wallpaperaccess.com/full/825336.jpg");
+            background-size: contain;
+        }
+
+        .item-4 {
+            grid-area: footer;
+            background-image: url('https://cdn1.dotesports.com/wp-content/uploads/2019/10/07103042/cod_mobile_main_1570103396815.jpg');
+            background-size: cover;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item-1">Top Games of 2022</div>
+        <div class="item item-2">Grand Theft Auto</div>
+        <div class="item item-3">PUBG</div>
+        <div class="item item-4">Call Of Duty Online</div>
+    </div>
+</body>
+
+</html>
